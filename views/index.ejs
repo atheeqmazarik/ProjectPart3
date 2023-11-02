@@ -1,0 +1,87 @@
+<%- include partials/header.ejs %>
+<%- include partials/main_nav.ejs %>
+<!--Main Content-->
+<main>
+  <div id="main-column">
+    <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4" style="font-weight: bold;">Welcome to My: <%= title %> page</h1>
+
+      <!--Home Page-->
+      <% if (title == "Home") { %>
+        <p class="lead" style="font-weight: bold;">Welcome to my Website! Please use the navigation bar at the top to visit other pages!</p>
+        <img src= "Assets/images/welcomeimage.png" width="800" height="380" alt="Welcome Picture">
+      <% } %>
+
+      <!--About Page-->
+      <% if (title == "About") { %>
+        <p class="lead" style="font-weight: bold;">A little bit about myself!</p>
+        <img src= "Assets/images/myimage.png" width="300" height="300" alt="Picture of Me">
+        <div id="about-text">
+          <p style="font-size: 12px; color: rgb(178, 150, 212); font-weight: bold;">
+                            My Name is Atheeq and I am a second year student at
+                            Ontario Tech University, currently in the 2nd year of
+                            the Networking and IT - Security program. I am currently
+                            19 years old. My goals are to get a job in the cyber 
+                            security field. This is my second website for my Web and Script 
+                            Programming Class. This website includes a home page, this about page,
+                            a projects page, showcasing some of my projects that I have worked on
+                            as well as a contact info page, for contacting me. Be sure to visit
+                            these other pages as well!
+                        </p>
+        </div>
+    <% } %>
+
+    <!--Projects Page-->
+    <% if (title == "Projects") { %>
+      <p class="lead" style="font-weight: bold;">Python Project: BMI Calculator</p>
+      <img src= "Assets/images/myimage2.png" width="620" height="320" alt="Picture of My Code">
+      <p style="font-size: 11px; color: rgb(178, 150, 212); font-weight: bold;">
+        This Python Code showcases a program used for calculating Body Mass Index (BMI)
+      </p>
+    <% } %>
+
+
+    <!--Contact Me Page-->
+    <% if (title == "Contact Me") { %>
+      <p class="lead" style="font-weight: bold;">Fill in the form below to contact me!</p>
+       <form 
+       action="mailto:atheeq.mazarik@ontariotechu.net" ?subject=signup Form method="post" enctype="text/plain" name="form">
+        <p>
+          <label for="name">Name: </label> <!--Section to enter your name-->
+          <input type="text" name="name" placeholder="Enter name/nickname here" size="48"> <!--placeholder text in bar-->
+        </p>
+
+        <p>
+          <label for="email">Email: </label><!--Section to enter your email address-->
+          <input type="email" type="email" placeholder="Enter email address here" size="48"> <!--placeholder text in bar-->                      
+        </p>
+
+        <p>
+          <label for="comments">Comments: </label><br><!--Section to enter your feedback/comments-->
+          <textarea name="comments" cols="60" rows="6"></textarea>
+        </p>
+
+        <p><input type="submit" value="Submit Form"/></p> <!--Submit button-->
+
+        </form>
+    <% } %>
+
+
+    </div>
+    </div>
+  </div>
+</main>
+
+<%- include partials/bottom_nav.ejs %>
+<%- include partials/footer.ejs %>
+ 
+
+
+
+
+
+
+
+
+
