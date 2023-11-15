@@ -1,0 +1,1 @@
+module.exports = {"URI": "mongodb+srv://atheeqm:hFU2hf0QGgNq5p6v@mongodbserver.psnhzx3.mongodb.net/tvTracker"}

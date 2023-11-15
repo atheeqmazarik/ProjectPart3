@@ -1,0 +1,76 @@
+<%- include partials/header.ejs %>
+<%- include partials/main_nav.ejs %>
+<main>
+  <div id="main-column">
+    <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4" style="font-weight: bold;">THE TV TRACKER: <%= title %></h1>
+
+      <!--Home Page-->
+      <% if (title == "Home") { %>
+        <p class="lead" style="font-weight: bold;">Welcome to The TV Tracker! To work on your TV List, click on the "TV List" icon in the navigation bar.</p>
+        <img src= "Assets/images/tvimage1.png" width="800" height="380" alt="Welcome to The TV Tracker">
+      <% } %>
+
+      <!--About Page-->
+      <% if (title == "About") { %>
+        <p class="lead" style="font-weight: bold;">The #1 Site for keeping track of your favorite TV Shows</p>
+        <img src= "Assets/images/tvimage2.png" width="650" height="300" alt="All about The TV Tracker">
+        <div id="about-text">
+        <br>
+          <p style="font-size: 12px; color: rgb(178, 150, 212); font-weight: bold;">
+                            Welcome to The TV Tracker! This website is the best site to 
+                            use if you want to track and organize the Television shows
+                            and series that you are watching, have watched, or want to watch.
+                            In order to get started, please click on the "TV List" icon in the 
+                            navigation bar. From there, you can add, edit or delete entries regarding
+                            your TV Show history! For any feedback or comments you would like to give,
+                            please click on the "Feedback/Contact" icon. And to go back to the homepage,
+                            click on the "Homepage" icon or the main logo.
+                        </p>
+        </div>
+    <% } %>
+
+    <!--Contact Me Page-->
+    <% if (title == "Contact Us") { %>
+      <p class="lead" style="font-weight: bold;">To send feedback or comments to us, fill in the form below</p>
+       <form 
+       action="mailto:atheeq.mazarik@ontariotechu.net" ?subject=signup Form method="post" enctype="text/plain" name="form">
+        <p>
+          <label for="name">Name: </label> <!--Section to enter your name-->
+          <input type="text" name="name" placeholder="Enter name/nickname here" size="48"> <!--placeholder text in bar-->
+        </p>
+
+        <p>
+          <label for="email">Email: </label><!--Section to enter your email address-->
+          <input type="email" type="email" placeholder="Enter email address here" size="48"> <!--placeholder text in bar-->                      
+        </p>
+
+        <p>
+          <label for="comments">Comments: </label><br><!--Section to enter your feedback/comments-->
+          <textarea name="comments" cols="60" rows="6"></textarea>
+        </p>
+
+        <p><input type="submit" value="Submit Form"/></p> <!--Submit button-->
+
+        </form>
+    <% } %>
+
+
+    </div>
+    </div>
+  </div>
+</main>
+
+<%- include partials/bottom_nav.ejs %>
+<%- include partials/footer.ejs %>
+ 
+
+
+
+
+
+
+
+
+

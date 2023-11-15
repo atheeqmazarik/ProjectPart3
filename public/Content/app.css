@@ -7,6 +7,27 @@
     background-color:rgb(64, 47, 163);
 }
 
+#list-column{ /*Body of list page */
+    height: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color:rgb(64, 47, 163);
+}
+
+#add-column{ /*Body of add page */
+    height: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color:rgb(64, 47, 163);
+}
+
+#edit-column{ /*Body of edit page */
+    height: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color:rgb(64, 47, 163);
+}
+
 #about-text {
     /* Aligns "About Me" Text in the center */
     text-align: center;
@@ -15,6 +36,13 @@
 .display-4 {
     /* Header of webpage */
     color: rgb(156, 50, 177);
+}
+
+.display-6 {
+    /* Header of TV List page */
+    color: rgb(156, 50, 177); 
+    font-weight: bold !important;
+    font-size: 32px !important;
 }
 
 .lead{

@@ -1,0 +1,117 @@
+<%- include ../partials/header.ejs %>
+<%- include ../partials/main_nav.ejs %>
+
+<!-- Content for the Add page -->
+<div id="add-column">
+<div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <h1><%= title %></h1>
+
+            <form class="form" method="POST">
+                <div class="form-group">
+                    <label for="nameTextField">Show Title</label>
+                    <input type="text" class="form-control"
+                    id="nameTextField"
+                    placeholder="Enter the Show Title"
+                    name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="creatorTextField">Creator</label>
+                    <input type="text" class="form-control"
+                    id="creatorTextField"
+                    placeholder="Enter the Show Creator"
+                    name="creator" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="genresTextField">Genres</label>
+                    <input type="text" class="form-control"
+                    id="genresTextField"
+                    placeholder="Enter the Genres"
+                    name="genres" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="episodesTextField">Episodes</label>
+                    <input type="text" class="form-control"
+                    id="episodesTextField"
+                    placeholder="Enter the # of Episodes"
+                    name="episodes" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="certificationTextField">Certification</label>
+                    <input type="text" class="form-control"
+                    id="certificationTextField"
+                    placeholder="Enter the TV certification"
+                    name="certification" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="statusTextField">Status</label>
+                    <input type="text" class="form-control"
+                    id="statusTextField"
+                    placeholder="Is this show Currently Airing or Finished Airing?"
+                    name="status" required>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="releaseTextField">Release Date</label>
+                    <input type="text" class="form-control"
+                    id="releaseTextField"
+                    placeholder="Enter years of runtime"
+                    name="release" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="descriptionTextArea">Description</label>
+                    <textarea type="text" class="form-control"
+                    id="descriptionTextArea"
+                    placeholder="Enter the a brief description of this show"
+                    name="description" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="watchingTextArea">Watching Status</label>
+                    <input type="text" class="form-control"
+                    id="watchingTextArea"
+                    placeholder="Are you currently watching, finished watching, or have you dropped the show"
+                    name="watching" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="watchedTextArea">Episodes Watched</label>
+                    <input type="text" class="form-control"
+                    id="watchedTextArea"
+                    placeholder="# of episodes watched so far"
+                    name="watched" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="ratingTextArea">Your Rating</label>
+                    <input type="text" class="form-control"
+                    id="ratingTextArea"
+                    placeholder="Enter your rating of this show out of 10"
+                    name="rating" required>
+                </div>
+                <br>
+                <button class="btn btn-success" type="submit">
+                    <i class="fas fa-edit"></i> Submit</button>
+                
+                    <a href="/tvlist" class="btn btn-danger">
+                        <i class="fas fa-undo"></i> Cancel</a>
+
+            </form>
+        </div>
+
+    </div>
+</div>
+</div>
+
+
+
+<%- include ../partials/bottom_nav.ejs %>  
+<%- include ../partials/footer.ejs %>
