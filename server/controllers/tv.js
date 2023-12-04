@@ -1,7 +1,6 @@
-var express = require('express')
-var router = express.Router();
-
-//let mongoose = require('mongoose');
+let express = require('express')
+let router = express.Router();
+let mongoose = require('mongoose');
 
 let Show = require('../models/tv')
 
@@ -10,8 +9,9 @@ module.exports.DislayShowList = async (req,res,next)=>{ //< Mark function as asy
     try{
        const tvList = await Show.find(); //< Use of await keyword
        res.render('tv/list', {
-          title: 'TV Show List', 
-          tvList: tvList
+          title: 'Course List', 
+          tvList: tvList,
+          displayName: req.user ? req.user.displayName:''
        });
     }catch(err){
        console.error(err);
@@ -24,11 +24,12 @@ module.exports.DislayShowList = async (req,res,next)=>{ //< Mark function as asy
 
 
 //For adding a show to the list
- module.exports.AddShow = async (req,res,next)=>{
+ module.exports.displayAddShow = async (req,res,next)=>{
     try{
         res.render('tv/add',
         {
-            title:'Add Show'
+            title:'Add Show',
+            displayName: req.user ? req.user.displayName:''
         })
     }
     catch(err)
@@ -42,7 +43,7 @@ module.exports.DislayShowList = async (req,res,next)=>{ //< Mark function as asy
 };
 
 //For processing the added show
-module.exports.ProcessShow = async (req,res,next)=>{
+module.exports.ProcessAddShow = async (req,res,next)=>{
     try
     {
         let newShow = Show 
@@ -76,14 +77,15 @@ module.exports.ProcessShow = async (req,res,next)=>{
 
 
 //for editing an entry
-module.exports.EditShow = async (req,res,next)=>{
+module.exports.displayEditShow = async (req,res,next)=>{
     try{
     const id = req.params.id;
     const showToEdit = await Show.findById(id);
     res.render('tv/edit',
     {
         title:'Edit Show',
-        Show:showToEdit
+        Show:showToEdit,
+        displayName: req.user ? req.user.displayName:''
     })
 }
 catch(error){
@@ -143,10 +145,3 @@ module.exports.DeleteShow = (req,res,next)=>{
         });
     }
 }
-
-
-
-
-
-
-

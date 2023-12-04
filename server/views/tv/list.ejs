@@ -1,64 +1,69 @@
 <%- include ../partials/header.ejs %>
 <%- include ../partials/main_nav.ejs %>
+
 <main> 
-    <div id="list-column">
-        <div class="container">
-            <div class="row">
-                <div class="col-offset-md-1 col-md-6">
-                    <h1 class="display-6">THE TV TRACKER: <%= title %></h1>
+    <div id="list-column" class="container">
+        <div class="row">
+            <div class="offset-md-1 col-md-6">
+                <h1 class="display-6">CourseHUB: <%= title %></h1>
+                <% if(typeof displayName === 'string' && displayName) { %>
                     <a href="/tvlist/add" class="btn btn-primary" role="button">
-                        <i class="fas fa-plus-circle"></i> Add a TV Show
+                        <i class="fas fa-plus-circle"></i> Add a Course
                     </a>
-                <br>
-                <br>
-                <table class= "table table-bordered table-striped table-hover">
-                    <tr class="d-flex">
-                        <th class="text-center col-1">Name</th>
-                        <th class="text-center col-1">Creator</th>
-                        <th class="text-center col-1">Genres</th>
-                        <th class="text-center col-1">Episodes</th>
-                        <th class="text-center col-1">Certification</th>
-                        <th class="text-center col-1">Status</th>
-                        <th class="text-center col-1">Release</th>
-                        <th class="text-center col-2">Description</th>
-                        <th class="text-center col-1">Watching</th>
-                        <th class="text-center col-1">Watched</th>
-                        <th class="text-center col-1">Rating</th>
-                        <th class="text-center col-1">EDIT</th>
-                        <th class="text-center col-1">ERASE</th>
-                    </tr>
-                    <% for(let count=0;count<tvList.length;count++) { %>    
-                    <tr class="d-flex">
-                        <td class="text-center col-1"><%= tvList[count].name %></td>
-                        <td class="text-center col-1"><%= tvList[count].creator %></td>
-                        <td class="text-center col-1"><%= tvList[count].genres %></td>
-                        <td class="text-center col-1"><%= tvList[count].episodes %></td>
-                        <td class="text-center col-1"><%= tvList[count].certification %></td>
-                        <td class="text-center col-1"><%= tvList[count].status %></td>
-                        <td class="text-center col-1"><%= tvList[count].release %></td>
-                        <td class="text-center col-2"><%= tvList[count].description %></td>
-                        <td class="text-center col-1"><%= tvList[count].watching %></td>
-                        <td class="text-center col-1"><%= tvList[count].watched %></td>
-                        <td class="text-center col-1"><%= tvList[count].rating %></td>
+                    <br>
+                <% } %>
 
-                        <td class="text-center col-1">
-                            <a href="/tvlist/edit/<%= tvList[count]._id %>" 
-                                class="btn btn-success btn-lg">
-                                <i class="fas fa-pencil-alt"></i> 
-                            </a>
-                        </td>
+                <br>
 
-                        <td class="text-center col-1">
-                            <a href="/tvlist/delete/<%= tvList[count]._id %>" 
-                                class="btn btn-danger btn-lg">
-                                <i class="fa-solid fa-eraser"></i> 
-                            </a>
-                        </td>
+                <table class="table table-bordered table-striped table-hover">
+                    <tr class="d-flex">
+                        <% if(typeof displayName === 'string' && displayName) { %>
+                            <th class="text-center col-3">Name</th>
+                            <th class="text-center col-3">Teacher</th>
+                            <th class="text-center col-3">Schedule</th>
+                            <th class="text-center col-3">Enrollment</th>
+                            <th class="text-center col-3">Grade</th>
+                            <th class="text-center col-3">EDIT</th>
+                            <th class="text-center col-3">ERASE</th>
+                        <% } else { %>
+                            <th class="text-center col-3">Name</th>
+                            <th class="text-center col-3">Teacher</th>
+                            <th class="text-center col-3">Schedule</th>
+                            <th class="text-center col-3">Enrollment</th>
+                            <th class="text-center col-3">Grade</th>
+                        <% } %>
                     </tr>
+
+                    <% for(let count = 0; count < tvList.length; count++) { %>    
+                        <tr class="d-flex">
+                            <% if(typeof displayName === 'string' && displayName) { %>
+                                <td class="text-center col-3"><%= tvList[count].name %></td>
+                                <td class="text-center col-3"><%= tvList[count].creator %></td>
+                                <td class="text-center col-3"><%= tvList[count].genres %></td>
+                                <td class="text-center col-3"><%= tvList[count].episodes %></td>
+                                <td class="text-center col-3"><%= tvList[count].certification %></td>
+                                <td class="text-center col-3">
+                                    <a href="/tvlist/edit/<%= tvList[count]._id %>" class="btn btn-success btn-lg">
+                                        <i class="fas fa-pencil-alt"></i> 
+                                    </a>
+                                </td>
+                                <td class="text-center col-3">
+                                    <a href="/tvlist/delete/<%= tvList[count]._id %>" class="btn btn-danger btn-lg">
+                                        <i class="fa-solid fa-eraser"></i> 
+                                    </a>
+                                </td>
+                            <% } else { %>
+                                <td class="text-center col-3"><%= tvList[count].name %></td>
+                                <td class="text-center col-3"><%= tvList[count].creator %></td>
+                                <td class="text-center col-3"><%= tvList[count].genres %></td>
+                                <td class="text-center col-3"><%= tvList[count].episodes %></td>
+                                <td class="text-center col-3"><%= tvList[count].certification %></td>
+                            <% } %>
+                        </tr>
                     <% } %>
                 </table>
-    </div>
-    </div>
+            </div>
+        </div>
     </div>
 </main>
 
