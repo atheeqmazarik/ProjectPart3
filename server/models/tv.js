@@ -12,4 +12,3 @@ let tvModel = mongoose.Schema({
         collection: "tv"
     }
 );
-module.exports = mongoose.model('Show', tvModel);
