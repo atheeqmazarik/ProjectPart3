@@ -28,7 +28,7 @@ module.exports.DislayShowList = async (req,res,next)=>{ //< Mark function as asy
     try{
         res.render('tv/add',
         {
-            title:'Add Show',
+            title:'Add Course',
             displayName: req.user ? req.user.displayName:''
         })
     }
@@ -83,7 +83,7 @@ module.exports.displayEditShow = async (req,res,next)=>{
     const showToEdit = await Show.findById(id);
     res.render('tv/edit',
     {
-        title:'Edit Show',
+        title:'Edit Course',
         Show:showToEdit,
         displayName: req.user ? req.user.displayName:''
     })
