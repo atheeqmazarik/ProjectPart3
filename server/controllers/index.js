@@ -21,7 +21,7 @@ module.exports.displayAboutPage = (req, res, next) => {
 
 module.exports.displayContactPage = (req, res, next) => {
     res.render('index', { 
-        title: 'Contact',
+        title: 'Contact Us',
         displayName: req.user ? req.user.displayName:''
     });
 }
@@ -58,7 +58,7 @@ module.exports.processLoginPage = (req, res, next) => {
             if (err) {
                 return next(err);
             }
-            return res.redirect('/tv-list');
+            return res.redirect('/login');
         });
     })(req, res, next);
 };

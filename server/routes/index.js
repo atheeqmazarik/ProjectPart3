@@ -4,6 +4,7 @@ let indexController = require('../controllers/index');
 
 /* Get home page. */
 router.get('/', indexController.displayHomePage);
+router.get('/home', indexController.displayHomePage);
 
 /* GET about page. */
 router.get('/about', indexController.displayAboutPage);
